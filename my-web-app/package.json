@@ -1,0 +1,22 @@
+{
+  "name": "green-api-test-interface",
+  "version": "1.0.0",
+  "description": "HTML interface for testing Green API methods",
+  "main": "src/index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000 --directory src",
+    "dev": "live-server src",
+    "build": "echo 'No build process needed for static site'"
+  },
+  "keywords": [
+    "green-api",
+    "whatsapp",
+    "api",
+    "test"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

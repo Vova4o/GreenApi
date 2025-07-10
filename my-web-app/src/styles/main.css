@@ -1,0 +1,276 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  padding: 20px;
+  height: 100vh;
+}
+
+header {
+  background: #35424a;
+  color: #ffffff;
+  padding: 10px 0;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.main-content {
+  display: flex;
+  gap: 30px;
+  flex: 1;
+  height: 100%;
+}
+
+.left-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  overflow-y: auto;
+}
+
+.right-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  color: #555;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #4caf50;
+  padding-bottom: 5px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  height: calc(100vh - 40px);
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  background: #35424a;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.button {
+  display: inline-block;
+  font-size: 16px;
+  color: #ffffff;
+  background: #e8491d;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background: #c0392b;
+}
+
+.connection-section,
+.methods-section,
+.message-section,
+.file-section {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  box-sizing: border-box;
+  min-height: 42px; /* Consistent minimum height */
+}
+
+.buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.api-button {
+  padding: 12px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.api-button:hover {
+  background-color: #45a049;
+}
+
+.api-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.response-section {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#responseOutput {
+  flex: 1;
+  font-family: monospace;
+  background-color: white;
+  resize: none;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+#messageText {
+  height: 80px;
+  resize: vertical;
+}
+
+/* Validation styles */
+input.error {
+  border: 2px solid #e74c3c !important;
+  background-color: #fdf2f2;
+}
+
+input.valid {
+  border: 2px solid #27ae60 !important;
+  background-color: #f2fdf2;
+}
+
+.validation-error {
+  color: #e74c3c;
+  font-size: 12px;
+  margin-top: 5px;
+  font-style: italic;
+}
+
+.validation-success {
+  color: #27ae60;
+  font-size: 12px;
+  margin-top: 5px;
+  font-style: italic;
+}
+
+/* Phone input hints */
+input[id*="chatId"]::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+/* Password input wrapper - FIX HEIGHT ISSUE */
+.password-input-wrapper {
+  position: relative;
+  display: block; /* Changed from flex to block */
+  width: 100%;
+}
+
+.password-input-wrapper input {
+  width: 100%;
+  padding: 10px; /* Same padding as other inputs */
+  padding-right: 45px; /* Make space for the eye icon */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  height: auto; /* Let it use natural height */
+  box-sizing: border-box;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%); /* Center vertically */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  color: #666;
+  font-size: 16px;
+  transition: color 0.3s ease;
+  height: 32px; /* Fixed height for button */
+  width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-password:hover {
+  color: #4CAF50;
+}
+
+.toggle-password:focus {
+  outline: none;
+}
+
+.toggle-password i {
+  pointer-events: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+
+  .buttons-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body {
+    padding: 10px;
+  }
+
+  .container {
+    height: auto;
+    min-height: calc(100vh - 20px);
+  }
+}
